@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Nkem ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+<body>
+
+<!-- Slideshow -->
+<div class="slideshow">
+  <img src="assets/images/img1.jpg" class="slide">
+  <img src="assets/images/img2.jpg" class="slide">
+  <img src="assets/images/img3.jpg" class="slide">
+</div>
+
+<!-- Music -->
+<audio id="bgMusic" src="assets/music/love.mp3" loop></audio>
+<button class="music-btn" onclick="toggleMusic()">♫</button>
+
+<!-- Main Content -->
+<div class="container">
+  <h1 id="title">To Onyinye, My Queen 👑</h1>
+  <p id="message"></p>
+
+  <div class="buttons" id="buttons">
+    <button class="yes" onclick="sayYes()">Yes 💖</button>
+    <button class="no" id="noBtn">You're too short to press No 😏</button>
+  </div>
+</div>
+
+<script src="assets/js/script.js"></script>
+
+</body>
+</html>
