@@ -2,17 +2,19 @@
 
 const music = document.getElementById("bgMusic");
 
-window.addEventListener("load", () => {
-    music.play().catch(() => { });
-});
-
-document.body.addEventListener("click", () => {
-    music.play();
-}, { once: true });
-
 function toggleMusic() {
     music.paused ? music.play() : music.pause();
 }
+
+/* ---------------- START OVERLAY ---------------- */
+
+const startOverlay = document.getElementById("startOverlay");
+
+startOverlay.addEventListener("click", () => {
+    startOverlay.classList.add("hidden");
+    music.play();
+    startExperience();
+});
 
 /* ---------------- SLIDESHOW (KEN BURNS) ---------------- */
 
@@ -83,24 +85,27 @@ function typeWriter() {
         revealButtons();
     }
 }
-typeWriter();
 
-/* Intro animations */
-anime({
-    targets: '#title',
-    opacity: [0, 1],
-    translateY: [-40, 0],
-    duration: 2000,
-    easing: 'easeOutExpo'
-});
+function startExperience() {
+    typeWriter();
 
-anime({
-    targets: '#message',
-    opacity: [0, 1],
-    delay: 1000,
-    duration: 2000,
-    easing: 'easeOutExpo'
-});
+    /* Intro animations */
+    anime({
+        targets: '#title',
+        opacity: [0, 1],
+        translateY: [-40, 0],
+        duration: 2000,
+        easing: 'easeOutExpo'
+    });
+
+    anime({
+        targets: '#message',
+        opacity: [0, 1],
+        delay: 1000,
+        duration: 2000,
+        easing: 'easeOutExpo'
+    });
+}
 
 function revealButtons() {
     const btns = document.getElementById("buttons");
